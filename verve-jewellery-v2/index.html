@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurelle | Fine Jewellery</title>
+  <meta name="description" content="Discover timeless jewellery for every celebration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+ 
+<div class="announcement">
+  <div class="announcement-track">
+    <div class="announcement-group">
+      <span>✦ Affordable Glamour</span>
+      <span>✦ Jewellery for Every Occasion</span>
+      <span>✦ Everyday Elegance</span>
+      <span>✦ Statement Styles</span>
+      <span>✦ Your Style, Your Sparkle</span>
+    </div>
+
+    <div class="announcement-group" aria-hidden="true">
+      <span>✦ Affordable Glamour</span>
+      <span>✦ Jewellery for Every Occasion</span>
+      <span>✦ Everyday Elegance</span>
+      <span>✦ Statement Styles</span>
+      <span>✦ Your Style, Your Sparkle</span>
+    </div>
+  </div>
+</div>
+
+
+  <header class="header">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav nav-left" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="pages/collections.html">All Jewellery</a>
+      <a href="pages/collections.html?category=gold">Gold</a>
+      <a href="pages/collections.html?category=diamond">Diamonds</a>
+    </nav>
+
+    <a class="logo" href="index.html">
+      RED SOLITARE
+      <span>F I N E &nbsp; J E W E L L E R Y</span>
+    </a>
+
+    <div class="nav nav-right">
+      <a href="pages/about.html" class="story-link">Our Story</a>
+      <a href="pages/contact.html">Contact</a>
+      <a href="pages/collections.html" class="bag-link">
+        Bag (<span id="cartCount">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=2200&q=85"
+        alt="Elegant jewellery collection"
+      >
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">THE ART OF ADORNMENT</p>
+        <h1>Beauty that<br>becomes <em>you.</em></h1>
+        <p>Timeless jewellery for your most meaningful moments.</p>
+        <a class="primary-button" href="pages/collections.html">
+          DISCOVER THE COLLECTION <span>↗</span>
+        </a>
+      </div>
+
+      <div class="hero-caption">
+        <span>THE AURELLE COLLECTION</span>
+        <span>CRAFTED FOR YOUR MOMENTS ↓</span>
+      </div>
+    </section>
+
+<!-- MOVING ANNOUNCEMENT BAR -->
+<div class="announcement-ticker">
+  <div class="announcement-ticker-track">
+
+    <div class="announcement-ticker-group">
+      <span>✦ Premium Quality</span>
+      <span>✦ Free Shipping Pan India</span>
+      <span>✦ COD Available</span>
+      <span>✦ Easy Exchange</span>
+    </div>
+
+    <div class="announcement-ticker-group" aria-hidden="true">
+      <span>✦ Premium Quality</span>
+      <span>✦ Free Shipping Pan India</span>
+      <span>✦ COD Available</span>
+      <span>✦ Easy Exchange</span>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p class="eyebrow">A WORLD OF YOUR OWN</p>
+      <h2>Every occasion has a story.<br><em>Make yours unforgettable.</em></h2>
+      <p>
+        Discover thoughtfully selected jewellery for celebrations,
+        everyday elegance and everything in between.
+      </p>
+    </section>
+
+    <!-- ALL PRODUCTS / CATEGORIES -->
+    <section class="categories-section" id="categories">
+      <div class="section-heading">
+        <p class="eyebrow">FIND YOUR FAVOURITE</p>
+        <h2>ALL PRODUCTS</h2>
+        <p>Explore a collection made for every version of you.</p>
+      </div>
+
+      <div class="category-grid">
+        <a class="category-card" href="pages/collections.html?category=bridal">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85"
+              alt="Bridal jewellery"
+              loading="lazy"
+            >
+          </div>
+          <span>BRIDAL COLLECTION</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=gold">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85"
+              alt="Gold jewellery"
+              loading="lazy"
+            >
+          </div>
+          <span>GOLD JEWELLERY</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=diamond">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85"
+              alt="Diamond rings"
+              loading="lazy"
+            >
+          </div>
+          <span>RINGS</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=gold">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"
+              alt="Necklaces and pendants"
+              loading="lazy"
+            >
+          </div>
+          <span>NECKLACES</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=diamond">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85"
+              alt="Statement earrings"
+              loading="lazy"
+            >
+          </div>
+          <span>EARRINGS</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured-section" id="featured">
+      <div class="section-heading">
+        <p class="eyebrow">HANDPICKED FOR YOU</p>
+        <h2>OUR FEATURED PRODUCTS</h2>
+        <p>Pieces that make ordinary moments feel extraordinary.</p>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="view-all">
+        <a class="outline-button" href="pages/collections.html">
+          VIEW ALL JEWELLERY ↗
+        </a>
+      </div>
+    </section>
+
+<!-- JEWELLERY VIDEO SHOWCASE -->
+
+<!-- JEWELLERY VIDEO STORIES -->
+<section class="video-showcase" id="jewellery-stories">
+
+  <div class="video-showcase-heading">
+    <p class="eyebrow">REAL STORIES. TIMELESS JEWELLERY.</p>
+
+    <h2>
+      Loved for a <em>Lifetime</em>
+    </h2>
+
+    <p class="video-showcase-description">
+      Moments made unforgettable by the jewellery you love.
+    </p>
+  </div>
+
+  <div class="jewellery-carousel">
+
+    <button class="jewellery-arrow jewellery-prev"
+      type="button" aria-label="Previous videos">
+      &#8249;
+    </button>
+
+    <div class="jewellery-video-window">
+      <div class="jewellery-video-track">
+
+        <div class="jewellery-video-card">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="videos/1.mp4" type="video/mp4">
+          </video>
+          <span>BRIDAL STORIES</span>
+        </div>
+
+        <div class="jewellery-video-card">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="videos/2.mp4" type="video/mp4">
+          </video>
+          <span>THE ART OF GOLD</span>
+        </div>
+
+        <div class="jewellery-video-card">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="videos/3.mp4" type="video/mp4">
+          </video>
+          <span>EVERYDAY ELEGANCE</span>
+        </div>
+
+        <div class="jewellery-video-card">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="videos/4.mp4" type="video/mp4">
+          </video>
+          <span>THE ART OF LAYERING</span>
+        </div>
+
+        <div class="jewellery-video-card">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="videos/5.mp4" type="video/mp4">
+          </video>
+          <span>MADE WITH LOVE</span>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="jewellery-arrow jewellery-next"
+      type="button" aria-label="Next videos">
+      &#8250;
+    </button>
+
+  </div>
+
+  <p class="video-showcase-footer">
+    EVERY PIECE HAS A STORY. FIND YOURS.
+  </p>
+
+</section>
+
+
+    <!-- SHOWROOM -->
+    <section class="showroom">
+      <div class="showroom-copy">
+        <p class="eyebrow">A PERSONAL EXPERIENCE</p>
+        <h2>See it. Feel it.<br><em>Make it yours.</em></h2>
+        <p>
+          Find your perfect piece with a personal showroom experience.
+          We would love to help you choose something special.
+        </p>
+        <a class="dark-button" href="pages/contact.html">ENQUIRE NOW ↗</a>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1100&q=85"
+        alt="Jewellery close-up"
+        loading="lazy"
+      >
+    </section>
+
+<!-- ALL PRODUCTS - TWO ROW INFINITE SHOWCASE -->
+<section class="all-products-showcase" id="all-products">
+
+  <div class="all-products-heading">
+    <p class="eyebrow">EXPLORE THE COLLECTION</p>
+    <h2>ALL <em>PRODUCTS</em></h2>
+    <p>Discover pieces made for every moment.</p>
+  </div>
+
+  <!-- TOP ROW: RIGHT TO LEFT -->
+  <div class="all-products-row all-products-row-top">
+    <div class="all-products-track">
+
+      <a href="pages/collections.html?category=bridal" class="all-product-card">
+        <img src="images/12.jpeg" alt="Bridal jewellery" loading="lazy">
+        <span>BRIDAL COLLECTION</span>
+      </a>
+
+      <a href="pages/collections.html?category=gold" class="all-product-card">
+        <img src="images/10.jpeg" alt="Gold jewellery" loading="lazy">
+        <span>GOLD JEWELLERY</span>
+      </a>
+
+      <a href="pages/collections.html?category=rings" class="all-product-card">
+        <img src="images/13.jpeg" alt="Jewellery rings" loading="lazy">
+        <span>RINGS</span>
+      </a>
+
+      <a href="pages/collections.html?category=necklaces" class="all-product-card">
+        <img src="images/1.jpeg" alt="Necklaces" loading="lazy">
+        <span>NECKLACES</span>
+      </a>
+
+      <a href="pages/collections.html?category=earrings" class="all-product-card">
+        <img src="images/11.jpeg" alt="Earrings" loading="lazy">
+        <span>EARRINGS</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- BOTTOM ROW: LEFT TO RIGHT -->
+  <div class="all-products-row all-products-row-bottom">
+    <div class="all-products-track">
+
+      <a href="pages/collections.html?category=pendants" class="all-product-card">
+        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=500&q=85" alt="Pendant jewellery" loading="lazy">
+        <span>PENDANTS</span>
+      </a>
+
+      <a href="pages/collections.html?category=bangles" class="all-product-card">
+        <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=500&q=85" alt="Gold bangles" loading="lazy">
+        <span>BANGLES</span>
+      </a>
+
+      <a href="pages/collections.html?category=diamonds" class="all-product-card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=85" alt="Diamond jewellery" loading="lazy">
+        <span>DIAMOND EDIT</span>
+      </a>
+
+      <a href="pages/collections.html?category=wedding" class="all-product-card">
+        <img src="images/12.jpeg" alt="Wedding jewellery" loading="lazy">
+        <span>WEDDING EDIT</span>
+      </a>
+
+      <a href="pages/collections.html?category=traditional" class="all-product-card">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=85" alt="Traditional jewellery" loading="lazy">
+        <span>TRADITIONAL</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="all-products-bottom">
+    <a href="pages/collections.html" class="outline-button">
+      EXPLORE ALL COLLECTIONS ↗
+    </a>
+  </div>
+
+</section>
+
+<!-- CUSTOMER REVIEWS SECTION -->
+<section class="customer-reviews" id="customerReviews">
+  <div class="reviews-heading">
+    <p class="eyebrow">LOVE FROM OUR CUSTOMERS</p>
+    <h2>REAL SPARKLE. REAL STORIES.</h2>
+    <p>Little details, beautiful memories, happy customers.</p>
+
+    <div class="reviews-rating">
+      <span class="review-stars">★★★★★</span>
+      <strong>4.9/5</strong>
+      <span>Customer love, every day</span>
+    </div>
+  </div>
+
+  
+<div class="reviews-marquee">
+
+  <!-- TOP ROW -->
+  <div class="reviews-row reviews-row-one">
+    <div class="reviews-track">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Absolutely loved the finishing! The jewellery looks elegant and feels perfect for special occasions.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Elegant Gold Necklace</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">A</span>
+          <div><strong>Ananya</strong><small>Jewellery Lover</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Such a beautiful design! It instantly elevated my outfit. Definitely something I would wear again.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Statement Earrings</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">S</span>
+          <div><strong>Simran</strong><small>Style Enthusiast</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">The design looks so classy and photographs beautifully. Perfect for festive looks and celebrations.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Festive Jewellery Set</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">P</span>
+          <div><strong>Priya</strong><small>Fashion Lover</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Beautiful details, a lovely shine and a versatile style that works with both traditional and modern outfits.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Everyday Pendant</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">N</span>
+          <div><strong>Neha</strong><small>Everyday Glam</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- BOTTOM ROW: OPPOSITE DIRECTION -->
+  <div class="reviews-row reviews-row-two">
+    <div class="reviews-track">
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">A gorgeous design that adds a special touch to any outfit. Loved the delicate detailing.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Classic Gold Earrings</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">M</span>
+          <div><strong>Meera</strong><small>Style Enthusiast</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Beautiful, versatile and easy to style. The perfect finishing touch for a festive outfit.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Festive Pendant Set</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">R</span>
+          <div><strong>Riya</strong><small>Fashion Lover</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">The styling possibilities are endless. A lovely addition to my jewellery collection.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Everyday Necklace</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">K</span>
+          <div><strong>Kavya</strong><small>Jewellery Lover</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Elegant and eye-catching without being too much. Perfect for celebrations and gifting.</p>
+        <div class="review-product">
+          <small>LOVED BY YOU</small>
+          <strong>Statement Jewellery Set</strong>
+        </div>
+        <div class="review-customer">
+          <span class="review-avatar">D</span>
+          <div><strong>Diya</strong><small>Style Enthusiast</small></div>
+          <span class="review-verified">♥ Customer</span>
+        </div>
+      </article>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <p class="eyebrow">LETTERS FROM AURELLE</p>
+      <h2>A little beauty in<br><em>your inbox.</em></h2>
+      <p>Be the first to discover new collections and special stories.</p>
+
+      <form id="newsletterForm">
+        <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <button type="submit">SUBSCRIBE ↗</button>
+      </form>
+      <small id="newsletterMessage">Occasional notes from our world of jewellery.</small>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <a class="logo footer-logo" href="index.html">
+        RED SOLITARE
+        <span>F I N E &nbsp; J E W E L L E R Y</span>
+      </a>
+
+      <p>For the moments<br>you hold close.</p>
+
+      <div class="footer-links">
+        <a href="pages/collections.html">Shop jewellery</a>
+        <a href="pages/about.html">Our story</a>
+        <a href="pages/contact.html">Contact us</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 RED SOLITARE — DEMO STORE</span>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
