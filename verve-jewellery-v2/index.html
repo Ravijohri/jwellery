@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aurelle | Fine Jewellery</title>
+  <title>Red SOLITARE | Fine Jewellery</title>
   <meta name="description" content="Discover timeless jewellery for every celebration.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,12 @@
 <div class="announcement">
   <div class="announcement-track">
     <div class="announcement-group">
+      <div class="ticker-social-links" aria-label="Social media links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">Pinterest</a>
+      </div>
+      <span>10% OFF ON FIRST ORDER</span>
       <span>✦ Affordable Glamour</span>
       <span>✦ Jewellery for Every Occasion</span>
       <span>✦ Everyday Elegance</span>
@@ -41,9 +47,14 @@
 
     <nav class="nav nav-left" id="mainNav">
       <a href="index.html">Home</a>
-      <a href="pages/collections.html">All Jewellery</a>
-      <a href="pages/collections.html?category=gold">Gold</a>
-      <a href="pages/collections.html?category=diamond">Diamonds</a>
+      <a href="pages/collections.html?category=new-arrivals">New Arrivals</a>
+      <a href="pages/collections.html?category=fashion-jewellery">Fashion Jewellery</a>
+      <a href="pages/collections.html?category=92.5-jewellery">92.5 Jewellery</a>
+      <a href="pages/collections.html?category=mens-jewellery">Men's Jewellery</a>
+      <a href="pages/collections.html?category=womens-jewellery">Women's Jewellery</a>
+      <a href="pages/collections.html?category=minimal-jewellery">Minimal Jewellery</a>
+      <a href="pages/collections.html?category=accessories">Accessories</a>
+      <a href="pages/collections.html?category=gift-guide">Gift Guide</a>
     </nav>
 
     <a class="logo" href="index.html">
@@ -51,11 +62,22 @@
       <span>F I N E &nbsp; J E W E L L E R Y</span>
     </a>
 
+    <form class="header-search" role="search" action="pages/collections.html">
+      <span aria-hidden="true">⌕</span>
+      <input type="search" name="search" placeholder="Search for gold necklace" aria-label="Search jewellery">
+      <button type="submit" aria-label="Search">↵</button>
+    </form>
+
     <div class="nav nav-right">
-      <a href="pages/about.html" class="story-link">Our Story</a>
-      <a href="pages/contact.html">Contact</a>
+      <a href="pages/about.html" class="header-icon" aria-label="Wishlist">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27S4 20 4 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 12 3.5C28 20 16 27 16 27Z"></path></svg>
+      </a>
+      <a href="pages/contact.html" class="header-icon" aria-label="Account">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="5"></circle><circle cx="16" cy="16" r="13"></circle><path d="M8 27c1.6-5 5-7.5 8-7.5s6.4 2.5 8 7.5"></path></svg>
+      </a>
       <a href="pages/collections.html" class="bag-link">
-        Bag (<span id="cartCount">0</span>)
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 11h18l1.5 16h-21Z"></path><path d="M11 12V8a5 5 0 0 1 10 0v4"></path></svg>
+        <sup id="cartCount">0</sup>
       </a>
     </div>
   </header>
@@ -108,90 +130,166 @@
 
 
     <!-- INTRO -->
-    <section class="intro">
-      <p class="eyebrow">A WORLD OF YOUR OWN</p>
-      <h2>Every occasion has a story.<br><em>Make yours unforgettable.</em></h2>
-      <p>
-        Discover thoughtfully selected jewellery for celebrations,
-        everyday elegance and everything in between.
-      </p>
+    <section class="intro new-arrivals-section" id="new-arrivals">
+      <p class="eyebrow">NEW COLLECTION</p>
+      <h2>New <em>Arrivals</em></h2>
+      <p>Discover the latest jewellery pieces, made to become your new favourites.</p>
     </section>
 
     <!-- ALL PRODUCTS / CATEGORIES -->
     <section class="categories-section" id="categories">
       <div class="section-heading">
-        <p class="eyebrow">FIND YOUR FAVOURITE</p>
-        <h2>ALL PRODUCTS</h2>
-        <p>Explore a collection made for every version of you.</p>
+        <h2 class="essentials-title"><em>Essentials</em></h2>
+        <img class="essentials-banner" src="images/essentials-collection.png" alt="Everyday, office wear and party wear jewellery collections" loading="lazy">
+        <p class="eyebrow">A TOUCH OF ELEGANCE</p>
+        <h2>Adorn <em>Yourself</em></h2>
+        <p>Jewels that speak your style</p>
       </div>
 
-      <div class="category-grid">
-        <a class="category-card" href="pages/collections.html?category=bridal">
+      <div class="luxury-category-grid misplaced-category-grid">
+        <a href="pages/collections.html?category=earrings" class="luxury-category-card">
+          <span class="luxury-category-name">Earrings</span>
+          <span class="luxury-category-link">Explore Collection ↗</span>
+        </a>
+        <a href="pages/collections.html?category=necklaces" class="luxury-category-card">
+          <span class="luxury-category-name">Necklaces</span>
+          <span class="luxury-category-link">Explore Collection ↗</span>
+        </a>
+        <a href="pages/collections.html?category=bracelets" class="luxury-category-card">
+          <span class="luxury-category-name">Bangles</span>
+          <span class="luxury-category-link">Explore Collection ↗</span>
+        </a>
+        <a href="pages/collections.html?category=rings" class="luxury-category-card">
+          <span class="luxury-category-name">Rings</span>
+          <span class="luxury-category-link">Explore Collection ↗</span>
+        </a>
+      </div>
+
+      <div class="category-grid legacy-category-grid">
+        <a class="category-card" href="pages/collections.html?category=earrings">
           <div class="category-image">
             <img
               src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85"
-              alt="Bridal jewellery"
+              alt="Earrings"
               loading="lazy"
             >
           </div>
-          <span>BRIDAL COLLECTION</span>
+          <span>EARRINGS</span>
         </a>
 
-        <a class="category-card" href="pages/collections.html?category=gold">
+        <a class="category-card" href="pages/collections.html?category=necklaces">
           <div class="category-image">
             <img
               src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85"
-              alt="Gold jewellery"
+              alt="Necklace"
               loading="lazy"
             >
           </div>
-          <span>GOLD JEWELLERY</span>
+          <span>NECKLACE</span>
         </a>
 
-        <a class="category-card" href="pages/collections.html?category=diamond">
+        <a class="category-card" href="pages/collections.html?category=bracelets">
           <div class="category-image">
             <img
               src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85"
-              alt="Diamond rings"
+              alt="Bangles and bracelets"
+              loading="lazy"
+            >
+          </div>
+          <span>BANGLES / BRACELETS</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=rings">
+          <div class="category-image">
+            <img
+              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"
+              alt="Rings"
               loading="lazy"
             >
           </div>
           <span>RINGS</span>
         </a>
 
-        <a class="category-card" href="pages/collections.html?category=gold">
-          <div class="category-image">
-            <img
-              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"
-              alt="Necklaces and pendants"
-              loading="lazy"
-            >
-          </div>
-          <span>NECKLACES</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=diamond">
+        <a class="category-card" href="pages/collections.html?category=chains">
           <div class="category-image">
             <img
               src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85"
-              alt="Statement earrings"
+              alt="Chains"
               loading="lazy"
             >
           </div>
-          <span>EARRINGS</span>
+          <span>CHAINS</span>
         </a>
+
+        <a class="category-card" href="pages/collections.html?category=accessories">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=700&q=85" alt="Accessories" loading="lazy">
+          </div>
+          <span>ACCESSORIES</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=pearl-jewellery">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85" alt="Pearl jewellery" loading="lazy">
+          </div>
+          <span>PEARL JEWELLERY</span>
+        </a>
+
+        <a class="category-card" href="pages/collections.html?category=mangalsutra">
+          <div class="category-image">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85" alt="Mangalsutra jewellery" loading="lazy">
+          </div>
+          <span>MANGALSUTRA</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- GIFT GUIDE -->
+    <section class="gift-guide-section" id="gift-guide">
+      <div class="gift-guide-heading">
+        <p class="eyebrow">A LITTLE SOMETHING SPECIAL</p>
+        <h2>Gift <em>Guide</em></h2>
+        <p>Thoughtful jewels for every person, moment and love story.</p>
+      </div>
+
+      <div class="gift-guide-grid">
+        <a class="gift-guide-card" href="pages/collections.html?category=gifting">
+          <img src="images/12.jpeg" alt="Gifts for her" loading="lazy">
+          <span>GIFTS FOR HER</span>
+        </a>
+        <a class="gift-guide-card" href="pages/collections.html?category=gifting">
+          <img src="images/10.jpeg" alt="Everyday gifting jewellery" loading="lazy">
+          <span>EVERYDAY SPARKLE</span>
+        </a>
+        <a class="gift-guide-card" href="pages/collections.html?category=gifting">
+          <img src="images/13.jpeg" alt="Special occasion gifts" loading="lazy">
+          <span>FOR SPECIAL MOMENTS</span>
+        </a>
+      </div>
+
+      <div class="luxury-category-grid gift-luxury-grid">
+        <a href="pages/collections.html?category=under-999" class="luxury-category-card"><span class="luxury-category-name">Under 999</span><span class="luxury-category-link">Explore Collection ↗</span></a>
+        <a href="pages/collections.html?category=for-her" class="luxury-category-card"><span class="luxury-category-name">For Her</span><span class="luxury-category-link">Explore Collection ↗</span></a>
+        <a href="pages/collections.html?category=for-him" class="luxury-category-card"><span class="luxury-category-name">For Him</span><span class="luxury-category-link">Explore Collection ↗</span></a>
+        <a href="pages/collections.html?category=for-kids" class="luxury-category-card"><span class="luxury-category-name">For Kids</span><span class="luxury-category-link">Explore Collection ↗</span></a>
       </div>
     </section>
 
     <!-- FEATURED PRODUCTS -->
     <section class="featured-section" id="featured">
       <div class="section-heading">
-        <p class="eyebrow">HANDPICKED FOR YOU</p>
-        <h2>OUR FEATURED PRODUCTS</h2>
-        <p>Pieces that make ordinary moments feel extraordinary.</p>
+        <p class="eyebrow">THE ART OF ADORNMENT</p>
+        <h2>LUXURY JEWELLERY</h2>
+        <p>Timeless pieces that make ordinary moments feel extraordinary.</p>
       </div>
 
       <div class="product-grid" id="productGrid"></div>
+
+      <div class="luxury-poster-slot" aria-label="Luxury Jewellery video">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="videos/luxury-jewellery.mp4" type="video/mp4">
+        </video>
+      </div>
 
       <div class="view-all">
         <a class="outline-button" href="pages/collections.html">
@@ -199,7 +297,37 @@
         </a>
       </div>
     </section>
+    
+<!-- RED SOLITARE COLLECTIONS -->
+<section class="rs-collections">
+  <div class="rs-collections-heading">
+    <h2>Explore Our Collections</h2>
+    <p>Discover jewellery for every occasion</p>
+  </div>
 
+  <div class="rs-collections-grid">
+
+    <a href="pages/collections.html" class="rs-collection-card rs-collection-large">
+      <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwc3567360/homepage/tanishq-collections/under-50k-mobile.jpg" alt="Jewellery Under 50K">
+      <span></span>
+    </a>
+
+    <a href="pages/collections.html" class="rs-collection-card">
+      <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwfba22b76/homepage/tanishq-collections/stunning-every-ear.jpg" alt="Elegant Gold Earrings">
+      <span></span>
+    </a>
+
+    <a href="pages/collections.html" class="rs-collection-card">
+      <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw9dbb6f94/homepage/tanishq-collections/gold-coins.jpg" alt="Gold Jewellery Collection">
+      <span></span>
+    </a>
+
+  </div>
+</section>
+
+<section class="rs-next-section">
+  <h2>Find Your Signature Sparkle</h2>
+</section>
 <!-- JEWELLERY VIDEO SHOWCASE -->
 
 <!-- JEWELLERY VIDEO STORIES -->

@@ -569,3 +569,64 @@ if (document.readyState === "loading") {
 } else {
   startRedSolitareCarousel();
 }
+
+function initSearchPlaceholder() {
+  const searchInput = document.querySelector('.header-search input');
+  if (!searchInput) return;
+
+  const searchTerms = ['bangles', 'necklace', 'earrings', 'rings', 'chains'];
+  let termIndex = 0;
+  let characterIndex = 0;
+  let deleting = false;
+
+  setTimeout(() => {
+    function typeSearchTerm() {
+      const term = searchTerms[termIndex];
+
+      if (!deleting) {
+        characterIndex++;
+        searchInput.placeholder = `Search for ${term.slice(0, characterIndex)}`;
+        if (characterIndex === term.length) {
+          deleting = true;
+          setTimeout(typeSearchTerm, 1200);
+          return;
+        }
+      } else {
+        characterIndex--;
+        searchInput.placeholder = `Search for ${term.slice(0, characterIndex)}`;
+        if (characterIndex === 0) {
+          deleting = false;
+          termIndex = (termIndex + 1) % searchTerms.length;
+        }
+      }
+
+      setTimeout(typeSearchTerm, deleting ? 55 : 95);
+    }
+
+    typeSearchTerm();
+  }, 3000);
+}
+
+function initStickyHeader() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const updateHeader = () => {
+    header.classList.toggle('nav-scrolled', window.scrollY > 40);
+  };
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSearchPlaceholder, { once: true });
+} else {
+  initSearchPlaceholder();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initStickyHeader, { once: true });
+} else {
+  initStickyHeader();
+}
