@@ -47,7 +47,7 @@
 
     <nav class="nav nav-left" id="mainNav">
       <a href="index.html">Home</a>
-      <a href="pages/collections.html?category=new-arrivals">New Arrivals</a>
+      <a href="index.html#new-arrivals-showcase">New Arrivals</a>
       <a href="pages/collections.html?category=fashion-jewellery">Fashion Jewellery</a>
       <a href="pages/collections.html?category=92.5-jewellery">92.5 Jewellery</a>
       <a href="pages/collections.html?category=mens-jewellery">Men's Jewellery</a>
@@ -82,13 +82,30 @@
     </div>
   </header>
 
+  <div class="arrival-garland" aria-hidden="true">
+    <svg viewBox="0 0 1600 190" preserveAspectRatio="none">
+      <path class="garland-string" d="M0 18 C180 78 340 88 560 46 S760 25 800 24"/>
+      <path class="garland-string" d="M800 24 C840 25 940 28 1040 46 S1420 78 1600 18"/>
+      <g class="garland-left">
+        <path class="garland-pennant wine" d="M86 46l34 9-4 38q-15 15-30 0z"/><path class="garland-pennant gold" d="M188 67l27 5-3 30q-12 12-24 0z"/>
+        <path class="garland-pennant wine" d="M294 77l34 2-4 38q-15 15-30 0z"/><path class="garland-pennant gold" d="M408 72l27-2 3 30q-12 12-24 0z"/>
+        <path class="garland-charm" d="M130 95v35m-8-8 8 10 8-10m96-15v28m-7-8 7 9 7-9m88-3v32m-8-9 8 11 8-11"/>
+      </g>
+      <g class="garland-right" transform="translate(800 0)">
+        <path class="garland-pennant wine" d="M86 46l34 9-4 38q-15 15-30 0z"/><path class="garland-pennant gold" d="M188 67l27 5-3 30q-12 12-24 0z"/>
+        <path class="garland-pennant wine" d="M294 77l34 2-4 38q-15 15-30 0z"/><path class="garland-pennant gold" d="M408 72l27-2 3 30q-12 12-24 0z"/>
+        <path class="garland-charm" d="M130 95v35m-8-8 8 10 8-10m96-15v28m-7-8 7 9 7-9m88-3v32m-8-9 8 11 8-11"/>
+      </g>
+    </svg>
+  </div>
+
   <main>
     <!-- HERO -->
     <section class="hero">
       <img
         class="hero-image"
-        src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=2200&q=85"
-        alt="Elegant jewellery collection"
+        src="images/Emerald Elegance Bridal Collection.png"
+        alt="Emerald elegance bridal jewellery collection"
       >
       <div class="hero-overlay"></div>
 
@@ -125,123 +142,241 @@
       <span>✦ Easy Exchange</span>
     </div>
 
+    <div class="announcement-ticker-group" aria-hidden="true">
+      <span>✦ Premium Quality</span>
+      <span>✦ Free Shipping Pan India</span>
+      <span>✦ COD Available</span>
+      <span>✦ Easy Exchange</span>
+    </div>
+
   </div>
 </div>
 
+    <section class="hero-intro-copy" aria-label="Discover your sparkle">
+      <h2 id="sparkle-categories-title">Discover Your Sparkle</h2>
+      <p>Timeless beauty, crafted for every occasion</p>
+    </section>
+
+    <section class="sparkle-categories" aria-labelledby="sparkle-categories-title">
+      <div class="sparkle-category-grid">
+        <a class="sparkle-category-card sparkle-category-wide" href="pages/collections.html?category=rings"><img src="images/Ring.jpg" alt="Rings"><span><strong>Rings</strong><small>EXPLORE ›</small></span></a>
+        <a class="sparkle-category-card sparkle-category-wide" href="pages/collections.html?category=earrings"><img src="images/Earring.jpg" alt="Earrings"><span><strong>Earrings</strong><small>EXPLORE ›</small></span></a>
+        <a class="sparkle-category-card" href="pages/collections.html?category=pendants"><img src="images/Pendent.jpg" alt="Pendants"><span><strong>Pendants</strong><small>EXPLORE ›</small></span></a>
+        <a class="sparkle-category-card" href="pages/collections.html?category=necklaces"><img src="images/Necklace.jpg" alt="Necklaces"><span><strong>Necklaces</strong><small>EXPLORE ›</small></span></a>
+        <a class="sparkle-category-card" href="pages/collections.html?category=bracelets"><img src="images/Bracelet.jpg" alt="Bracelets"><span><strong>Bracelets</strong><small>EXPLORE ›</small></span></a>
+        <a class="sparkle-category-card" href="pages/collections.html?category=mangalsutra"><img src="images/Mangalsutra.jpg" alt="Mangalsutra"><span><strong>Mangalsutra</strong><small>EXPLORE ›</small></span></a>
+      </div>
+    </section>
+
+    <section class="new-arrivals-title" aria-labelledby="new-arrivals-heading">
+      <h2 id="new-arrivals-heading">New Arrivals</h2>
+      <p>Fresh designs. Timeless elegance</p>
+    </section>
+
+    <section class="new-arrivals-feature" aria-label="New arrivals collection">
+      <svg class="new-arrivals-clip-defs" aria-hidden="true" focusable="false">
+        <defs>
+          <clipPath id="new-arrivals-arch-clip" clipPathUnits="objectBoundingBox">
+            <path d="M.08 1Q.04 1 .04 .968V.242C.04 .1667 .1267 .0947 .25 .0895C.3667 .0842 .4467 .0789 .5 .0316C.5533 .0789 .6333 .0842 .75 .0895C.8733 .0947 .96 .1667 .96 .242V.968Q.96 1 .92 1Z"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <div class="new-arrivals-carousel">
+        <img class="new-arrivals-latkan" src="images/arrval-cutout.png" alt="Gold latkan necklace from the new arrivals collection" loading="lazy">
+        <button class="new-arrivals-prev" type="button" aria-label="View previous new arrivals">&larr;</button>
+        <div class="new-arrivals-track">
+          <a href="pages/collections.html?category=new-arrivals" class="new-arrivals-card">
+            <span class="new-arrivals-box">
+              <img class="new-arrivals-product" src="images/new-arrival-necklace.png" alt="Silver teardrop necklace on a dark velvet display" loading="lazy">
+              <svg class="new-arrivals-border" viewBox="0 0 290 398" preserveAspectRatio="none" aria-hidden="true"><path d="M23 398Q12 398 12 386V96C12 66 45 38 84 36C124 34 137 31 145 12C153 31 166 34 206 36C245 38 278 66 278 96V386Q278 398 267 398Z"/></svg>
+            </span>
+          </a>
+          <a href="pages/collections.html?category=necklaces" class="new-arrivals-card" aria-label="View necklace arrival">
+            <span class="new-arrivals-box"><img class="new-arrivals-product" src="images/1.jpeg" alt="Gold necklace from the new arrivals collection" loading="lazy"><svg class="new-arrivals-border" viewBox="0 0 290 398" preserveAspectRatio="none" aria-hidden="true"><path d="M23 398Q12 398 12 386V96C12 66 45 38 84 36C124 34 137 31 145 12C153 31 166 34 206 36C245 38 278 66 278 96V386Q278 398 267 398Z"/></svg></span>
+          </a>
+          <a href="pages/collections.html?category=bracelets" class="new-arrivals-card" aria-label="View bracelet arrival">
+            <span class="new-arrivals-box"><img class="new-arrivals-product" src="images/3.jpeg" alt="Gold bracelet from the new arrivals collection" loading="lazy"><svg class="new-arrivals-border" viewBox="0 0 290 398" preserveAspectRatio="none" aria-hidden="true"><path d="M23 398Q12 398 12 386V96C12 66 45 38 84 36C124 34 137 31 145 12C153 31 166 34 206 36C245 38 278 66 278 96V386Q278 398 267 398Z"/></svg></span>
+          </a>
+          <a href="pages/collections.html?category=earrings" class="new-arrivals-card" aria-label="View earrings arrival">
+            <span class="new-arrivals-box"><img class="new-arrivals-product" src="images/5.jpeg" alt="Gold earrings from the new arrivals collection" loading="lazy"><svg class="new-arrivals-border" viewBox="0 0 290 398" preserveAspectRatio="none" aria-hidden="true"><path d="M23 398Q12 398 12 386V96C12 66 45 38 84 36C124 34 137 31 145 12C153 31 166 34 206 36C245 38 278 66 278 96V386Q278 398 267 398Z"/></svg></span>
+          </a>
+          <a href="pages/collections.html?category=rings" class="new-arrivals-card" aria-label="View ring arrival">
+            <span class="new-arrivals-box"><img class="new-arrivals-product" src="images/7.jpeg" alt="Gold ring from the new arrivals collection" loading="lazy"><svg class="new-arrivals-border" viewBox="0 0 290 398" preserveAspectRatio="none" aria-hidden="true"><path d="M23 398Q12 398 12 386V96C12 66 45 38 84 36C124 34 137 31 145 12C153 31 166 34 206 36C245 38 278 66 278 96V386Q278 398 267 398Z"/></svg></span>
+          </a>
+        </div>
+        <button class="new-arrivals-next" type="button" aria-label="View more new arrivals">→</button>
+      </div>
+    </section>
+
+    <section class="new-arrivals-collections" aria-labelledby="our-collections-heading">
+      <div class="new-arrivals-collections-heading">
+        <p class="eyebrow">CURATED FOR YOU</p>
+        <h2 id="our-collections-heading">Our <em>Collections</em></h2>
+        <p>Discover jewellery for every occasion</p>
+      </div>
+      <div class="new-arrivals-collections-stage">
+        <div class="new-arrivals-collections-track">
+        <a href="pages/collections.html?category=necklaces"><img src="images/Elegant Ruby and Diamond Necklace Banner.png" alt="Ruby and diamond necklace collection" loading="lazy"><span>Necklaces</span></a>
+        <a href="pages/collections.html?category=bracelets"><img src="images/Emerald Halo Ring on Velvet.png" alt="Emerald halo ring collection" loading="lazy"><span>Bracelets</span></a>
+        <a href="pages/collections.html?category=earrings"><img src="images/Rose Gold Floral Diamond Bangle on Velvet.png" alt="Rose gold floral diamond bangle collection" loading="lazy"><span>Earrings</span></a>
+        <a href="pages/collections.html?category=earrings"><img src="images/Emerald Chandelier Earrings on Velvet.png" alt="Emerald chandelier earrings collection" loading="lazy"><span>Earrings</span></a>
+        <a href="pages/collections.html?category=necklaces"><img src="images/Gold Chain on Burgundy Velvet.png" alt="Gold chain necklace collection" loading="lazy"><span>Necklaces</span></a>
+        </div>
+      </div>
+      <div class="collections-carousel-controls" aria-label="Collection carousel controls">
+        <button class="collections-carousel-prev" type="button" aria-label="Previous collection">&lsaquo;</button>
+        <div class="collections-carousel-dots" aria-label="Collection slides"></div>
+        <button class="collections-carousel-next" type="button" aria-label="Next collection">&rsaquo;</button>
+      </div>
+    </section>
+
+    <section class="most-loved-section" aria-labelledby="most-loved-title">
+      <div class="most-loved-heading">
+        <h2 id="most-loved-title">Our Most Loved Designs</h2>
+        <p>Discover diamonds that become part of your most precious moments.</p>
+      </div>
+      <div class="most-loved-filters" aria-label="Product categories">
+        <button class="is-active" type="button" data-filter="all">All</button><button type="button" data-filter="rings">Rings</button><button type="button" data-filter="earrings">Earrings</button><button type="button" data-filter="bracelets">Bracelets</button><button type="button" data-filter="necklaces">Necklaces</button><button type="button" data-filter="bangles">Bangles</button>
+      </div>
+      <div class="most-loved-products-stage">
+        <button class="most-loved-prev" type="button" aria-label="Previous products">&lsaquo;</button>
+        <div class="most-loved-grid">
+        <a class="most-loved-card" href="pages/collections.html?category=necklaces"><div><img src="images/1.jpeg" alt="Modern floral diamond pendant" loading="lazy"><span aria-label="Add to wishlist">♡</span></div><strong>₹13,240</strong><p>Modern Floral 9KT Yellow Gold Diamond Pendant</p><small>Flat 5% Selling Price</small></a>
+        <a class="most-loved-card" href="pages/collections.html?category=earrings"><div><img src="images/5.jpeg" alt="Delicate geometric diamond studs" loading="lazy"><span aria-label="Add to wishlist">♡</span></div><strong>₹31,298</strong><p>Delicate Geometric Design Diamond Studs</p><small>Free 24KT Gold Coin on ₹50K</small></a>
+        <a class="most-loved-card" href="pages/collections.html?category=rings"><div><img src="images/Emerald Halo Ring on Velvet.png" alt="Refined emerald halo diamond ring" loading="lazy"><span aria-label="Add to wishlist">♡</span></div><strong>₹92,526</strong><p>Refined Cluster Rose Gold Diamond Ring</p><small>Free 24KT Gold Coin on ₹50K</small></a>
+        <a class="most-loved-card" href="pages/collections.html?category=bracelets"><div><img src="images/Rose Gold Floral Diamond Bangle on Velvet.png" alt="Elegant rose gold diamond bracelet" loading="lazy"><span aria-label="Add to wishlist">♡</span></div><strong>₹62,671</strong><p>Elegant 18KT Rose Gold Woven Bracelet</p><small>Free 24KT Gold Coin on ₹50K</small></a>
+        <a class="most-loved-card" href="pages/collections.html?category=necklaces"><div><img src="images/Gold Chain on Burgundy Velvet.png" alt="Graceful diamond necklace" loading="lazy"><span aria-label="Add to wishlist">♡</span></div><strong>₹1,14,816</strong><p>Graceful Diamond Designed Necklace</p><small>Free 24KT Gold Coin on ₹50K</small></a>
+        </div>
+        <button class="most-loved-next" type="button" aria-label="Next products">&rsaquo;</button>
+      </div>
+    </section>
 
     <!-- INTRO -->
     <section class="intro new-arrivals-section" id="new-arrivals">
+      <div class="new-arrivals-garland" aria-hidden="true">
+        <img class="new-arrivals-garland-left" src="images/garland-left.png" alt="" loading="eager">
+        <img class="new-arrivals-garland-right" src="images/garland-right.png" alt="" loading="eager">
+        <svg viewBox="0 0 1600 150" preserveAspectRatio="none">
+          <path class="garland-string" d="M0 12 C180 72 350 82 560 40 S760 20 800 20 C840 20 940 22 1040 40 S1420 72 1600 12"/>
+          <path class="garland-pennant wine" d="M90 48l34 8-4 36q-15 15-30 0z"/><path class="garland-pennant gold" d="M210 68l27 5-3 28q-12 12-24 0z"/>
+          <path class="garland-pennant wine" d="M340 76l34 2-4 36q-15 15-30 0z"/><path class="garland-pennant gold" d="M470 64l27-2 3 30q-12 12-24 0z"/>
+          <path class="garland-pennant wine" d="M1476 48l-34 8 4 36q15 15 30 0z"/><path class="garland-pennant gold" d="M1390 68l-27 5 3 28q12 12 24 0z"/>
+          <path class="garland-pennant wine" d="M1260 76l-34 2 4 36q15 15 30 0z"/><path class="garland-pennant gold" d="M1130 64l-27-2-3 30q12 12 24 0z"/>
+          <path class="garland-charm" d="M140 86v27l-10 12 10 12 10-12-10-12m1180-15v27l-10 12 10 12 10-12-10-12m-820-20v22l-8 10 8 10 8-10-8-10m640-5v22l-8 10 8 10 8-10-8-10"/>
+        </svg>
+      </div>
       <p class="eyebrow">NEW COLLECTION</p>
       <h2>New <em>Arrivals</em></h2>
+      <span class="new-arrivals-divider" aria-hidden="true"></span>
       <p>Discover the latest jewellery pieces, made to become your new favourites.</p>
+    </section>
+
+    <!-- SCULPTED PROMOTIONAL BANNERS -->
+    <section class="sculpted-promos" aria-label="Featured jewellery collections">
+      <a class="sculpted-promo" href="pages/collections.html?category=necklaces" aria-label="Shop necklaces collection">
+        <svg class="sculpted-promo-frame" viewBox="0 0 600 760" preserveAspectRatio="none" aria-hidden="true">
+          <defs><clipPath id="necklace-arch" clipPathUnits="objectBoundingBox"><path d="M.08 1Q.04 1 .04 .968V.242C.04 .1667 .1267 .0947 .25 .0895C.3667 .0842 .4467 .0789 .5 .0316C.5533 .0789 .6333 .0842 .75 .0895C.8733 .0947 .96 .1667 .96 .242V.968Q.96 1 .92 1Z"/></clipPath></defs>
+          <path class="sculpted-promo-border" d="M48 760Q24 760 24 736V184C24 126 76 72 150 68C220 64 268 60 300 24C332 60 380 64 450 68C524 72 576 126 576 184V736Q576 760 552 760Z"/>
+          <path class="sculpted-promo-border-inner" d="M55 750Q39 750 39 734V180C39 103 120 39 300 39s261 64 261 141v554q0 16-16 16Z"/>
+        </svg>
+        <div class="sculpted-promo-image" style="--promo-image: url('images/1.jpeg'); clip-path: url(#necklace-arch); -webkit-clip-path: url(#necklace-arch);">
+          <img src="images/1.jpeg" alt="Luxury necklace collection" loading="lazy">
+        </div>
+        <div class="sculpted-promo-copy">
+          <p class="eyebrow">THE SIGNATURE EDIT</p>
+          <h3>Necklaces</h3>
+          <span>SHOP NOW <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+
+      <a class="sculpted-promo" href="pages/collections.html?category=bracelets" aria-label="Shop bangles collection">
+        <svg class="sculpted-promo-frame" viewBox="0 0 600 760" preserveAspectRatio="none" aria-hidden="true">
+          <defs><clipPath id="bangles-arch" clipPathUnits="objectBoundingBox"><path d="M.08 1Q.04 1 .04 .968V.242C.04 .1667 .1267 .0947 .25 .0895C.3667 .0842 .4467 .0789 .5 .0316C.5533 .0789 .6333 .0842 .75 .0895C.8733 .0947 .96 .1667 .96 .242V.968Q.96 1 .92 1Z"/></clipPath></defs>
+          <path class="sculpted-promo-border" d="M48 760Q24 760 24 736V184C24 126 76 72 150 68C220 64 268 60 300 24C332 60 380 64 450 68C524 72 576 126 576 184V736Q576 760 552 760Z"/>
+          <path class="sculpted-promo-border-inner" d="M55 750Q39 750 39 734V180C39 103 120 39 300 39s261 64 261 141v554q0 16-16 16Z"/>
+        </svg>
+        <div class="sculpted-promo-image" style="--promo-image: url('images/3.jpeg'); clip-path: url(#bangles-arch); -webkit-clip-path: url(#bangles-arch);">
+          <img src="images/3.jpeg" alt="Premium embellished bangles collection" loading="lazy">
+        </div>
+        <div class="sculpted-promo-copy">
+          <p class="eyebrow">THE STATEMENT EDIT</p>
+          <h3>Bangles</h3>
+          <span>SHOP NOW <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+
+      <a class="sculpted-promo" href="pages/collections.html?category=earrings" aria-label="Shop earrings collection">
+        <svg class="sculpted-promo-frame" viewBox="0 0 600 760" preserveAspectRatio="none" aria-hidden="true">
+          <defs><clipPath id="earrings-arch" clipPathUnits="objectBoundingBox"><path d="M.08 1Q.04 1 .04 .968V.242C.04 .1667 .1267 .0947 .25 .0895C.3667 .0842 .4467 .0789 .5 .0316C.5533 .0789 .6333 .0842 .75 .0895C.8733 .0947 .96 .1667 .96 .242V.968Q.96 1 .92 1Z"/></clipPath></defs>
+          <path class="sculpted-promo-border" d="M48 760Q24 760 24 736V184C24 126 76 72 150 68C220 64 268 60 300 24C332 60 380 64 450 68C524 72 576 126 576 184V736Q576 760 552 760Z"/>
+          <path class="sculpted-promo-border-inner" d="M55 750Q39 750 39 734V180C39 103 120 39 300 39s261 64 261 141v554q0 16-16 16Z"/>
+        </svg>
+        <div class="sculpted-promo-image" style="--promo-image: url('images/5.jpeg'); clip-path: url(#earrings-arch); -webkit-clip-path: url(#earrings-arch);">
+          <img src="images/5.jpeg" alt="Statement earrings collection" loading="lazy">
+        </div>
+        <div class="sculpted-promo-copy">
+          <p class="eyebrow">THE ELEVATED EDIT</p>
+          <h3>Earrings</h3>
+          <span>SHOP NOW <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+
+      <a class="sculpted-promo" href="pages/collections.html?category=rings" aria-label="Shop rings collection">
+        <svg class="sculpted-promo-frame" viewBox="0 0 600 760" preserveAspectRatio="none" aria-hidden="true">
+          <defs><clipPath id="rings-arch" clipPathUnits="objectBoundingBox"><path d="M.08 1Q.04 1 .04 .968V.242C.04 .1667 .1267 .0947 .25 .0895C.3667 .0842 .4467 .0789 .5 .0316C.5533 .0789 .6333 .0842 .75 .0895C.8733 .0947 .96 .1667 .96 .242V.968Q.96 1 .92 1Z"/></clipPath></defs>
+          <path class="sculpted-promo-border" d="M48 760Q24 760 24 736V184C24 126 76 72 150 68C220 64 268 60 300 24C332 60 380 64 450 68C524 72 576 126 576 184V736Q576 760 552 760Z"/>
+          <path class="sculpted-promo-border-inner" d="M55 750Q39 750 39 734V180C39 103 120 39 300 39s261 64 261 141v554q0 16-16 16Z"/>
+        </svg>
+        <div class="sculpted-promo-image" style="--promo-image: url('images/7.jpeg'); clip-path: url(#rings-arch); -webkit-clip-path: url(#rings-arch);">
+          <img src="images/7.jpeg" alt="Fine rings collection" loading="lazy">
+        </div>
+        <div class="sculpted-promo-copy">
+          <p class="eyebrow">THE FOREVER EDIT</p>
+          <h3>Rings</h3>
+          <span>SHOP NOW <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    </section>
+
+    <a class="category-explore-link" href="pages/collections.html?category=new-arrivals">EXPLORE THE COLLECTION <span aria-hidden="true">→</span></a>
+
+    <section class="curated-section" aria-labelledby="curated-title">
+      <div class="curated-heading">
+        <p class="eyebrow">A CONSIDERED SELECTION</p>
+        <h2 id="curated-title">Curated <em>for You</em></h2>
+      </div>
+      <div class="curated-grid">
+        <article class="curated-product"><div class="curated-product-image"><img src="images/1.jpeg" alt="The Sol Pendant" loading="lazy"><button class="curated-wishlist" type="button" aria-label="Add The Sol Pendant to wishlist">♡</button></div><h3>The Sol Pendant</h3><p>Gold Jewellery</p><strong>₹12,900</strong></article>
+        <article class="curated-product"><div class="curated-product-image"><img src="images/4.jpeg" alt="Éclat Diamond Ring" loading="lazy"><button class="curated-wishlist" type="button" aria-label="Add Éclat Diamond Ring to wishlist">♡</button></div><h3>Éclat Diamond Ring</h3><p>Diamond Jewellery</p><strong>₹18,500</strong></article>
+        <article class="curated-product"><div class="curated-product-image"><img src="images/8.jpeg" alt="Signature Necklace" loading="lazy"><button class="curated-wishlist" type="button" aria-label="Add Signature Necklace to wishlist">♡</button></div><h3>Signature Necklace</h3><p>Gold Jewellery</p><strong>₹24,900</strong></article>
+        <article class="curated-product"><div class="curated-product-image"><img src="images/6.jpeg" alt="Diamond Glow" loading="lazy"><button class="curated-wishlist" type="button" aria-label="Add Diamond Glow to wishlist">♡</button></div><h3>Diamond Glow</h3><p>Diamond Jewellery</p><strong>₹15,900</strong></article>
+      </div>
     </section>
 
     <!-- ALL PRODUCTS / CATEGORIES -->
     <section class="categories-section" id="categories">
-      <div class="section-heading">
-        <h2 class="essentials-title"><em>Essentials</em></h2>
-        <img class="essentials-banner" src="images/essentials-collection.png" alt="Everyday, office wear and party wear jewellery collections" loading="lazy">
-        <p class="eyebrow">A TOUCH OF ELEGANCE</p>
-        <h2>Adorn <em>Yourself</em></h2>
-        <p>Jewels that speak your style</p>
+      <div class="essentials-reveal" data-essentials-reveal>
+        <div class="essentials-hero" aria-hidden="true">
+          <img src="images/Luxury Jewellery Portrait with Essential Style.png" alt="">
+        </div>
+        <p class="essentials-gap-copy">From Everyday Moments to Extraordinary Nights.</p>
+        <img class="essentials-gap-image" src="images/Golden Hands, Red Solitare (1).png" alt="Red Solitare jewellery styling" loading="lazy">
+        <div class="essentials-panels" aria-label="Essentials collections">
+          <a class="essentials-panel" href="pages/collections.html?category=minimal-jewellery" aria-label="Explore Daily Wear collection">
+            <div class="essentials-panel-media"><img src="images/board1.jpg" alt="Daily Wear jewellery" loading="lazy"></div>
+            <span class="essentials-panel-copy"><strong>Daily Wear</strong><small>Explore Collection <b aria-hidden="true">↗</b></small></span>
+          </a>
+          <a class="essentials-panel" href="pages/collections.html?category=fashion-jewellery" aria-label="Explore Party Wear collection">
+            <div class="essentials-panel-media"><img src="images/board2.jpg" alt="Party Wear jewellery" loading="lazy"></div>
+            <span class="essentials-panel-copy"><strong>Party Wear</strong><small>Explore Collection <b aria-hidden="true">↗</b></small></span>
+          </a>
+          <a class="essentials-panel" href="pages/collections.html?category=92.5-jewellery" aria-label="Explore Office Wear collection">
+            <div class="essentials-panel-media"><img src="images/board3.jpg" alt="Office Wear jewellery" loading="lazy"></div>
+            <span class="essentials-panel-copy"><strong>Office Wear</strong><small>Explore Collection <b aria-hidden="true">↗</b></small></span>
+          </a>
+        </div>
       </div>
 
-      <div class="luxury-category-grid misplaced-category-grid">
-        <a href="pages/collections.html?category=earrings" class="luxury-category-card">
-          <span class="luxury-category-name">Earrings</span>
-          <span class="luxury-category-link">Explore Collection ↗</span>
-        </a>
-        <a href="pages/collections.html?category=necklaces" class="luxury-category-card">
-          <span class="luxury-category-name">Necklaces</span>
-          <span class="luxury-category-link">Explore Collection ↗</span>
-        </a>
-        <a href="pages/collections.html?category=bracelets" class="luxury-category-card">
-          <span class="luxury-category-name">Bangles</span>
-          <span class="luxury-category-link">Explore Collection ↗</span>
-        </a>
-        <a href="pages/collections.html?category=rings" class="luxury-category-card">
-          <span class="luxury-category-name">Rings</span>
-          <span class="luxury-category-link">Explore Collection ↗</span>
-        </a>
-      </div>
-
-      <div class="category-grid legacy-category-grid">
-        <a class="category-card" href="pages/collections.html?category=earrings">
-          <div class="category-image">
-            <img
-              src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=85"
-              alt="Earrings"
-              loading="lazy"
-            >
-          </div>
-          <span>EARRINGS</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=necklaces">
-          <div class="category-image">
-            <img
-              src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85"
-              alt="Necklace"
-              loading="lazy"
-            >
-          </div>
-          <span>NECKLACE</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=bracelets">
-          <div class="category-image">
-            <img
-              src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=700&q=85"
-              alt="Bangles and bracelets"
-              loading="lazy"
-            >
-          </div>
-          <span>BANGLES / BRACELETS</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=rings">
-          <div class="category-image">
-            <img
-              src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"
-              alt="Rings"
-              loading="lazy"
-            >
-          </div>
-          <span>RINGS</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=chains">
-          <div class="category-image">
-            <img
-              src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=700&q=85"
-              alt="Chains"
-              loading="lazy"
-            >
-          </div>
-          <span>CHAINS</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=accessories">
-          <div class="category-image">
-            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=700&q=85" alt="Accessories" loading="lazy">
-          </div>
-          <span>ACCESSORIES</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=pearl-jewellery">
-          <div class="category-image">
-            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85" alt="Pearl jewellery" loading="lazy">
-          </div>
-          <span>PEARL JEWELLERY</span>
-        </a>
-
-        <a class="category-card" href="pages/collections.html?category=mangalsutra">
-          <div class="category-image">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=700&q=85" alt="Mangalsutra jewellery" loading="lazy">
-          </div>
-          <span>MANGALSUTRA</span>
-        </a>
-      </div>
     </section>
 
     <!-- GIFT GUIDE -->
@@ -298,36 +433,6 @@
       </div>
     </section>
     
-<!-- RED SOLITARE COLLECTIONS -->
-<section class="rs-collections">
-  <div class="rs-collections-heading">
-    <h2>Explore Our Collections</h2>
-    <p>Discover jewellery for every occasion</p>
-  </div>
-
-  <div class="rs-collections-grid">
-
-    <a href="pages/collections.html" class="rs-collection-card rs-collection-large">
-      <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwc3567360/homepage/tanishq-collections/under-50k-mobile.jpg" alt="Jewellery Under 50K">
-      <span></span>
-    </a>
-
-    <a href="pages/collections.html" class="rs-collection-card">
-      <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dwfba22b76/homepage/tanishq-collections/stunning-every-ear.jpg" alt="Elegant Gold Earrings">
-      <span></span>
-    </a>
-
-    <a href="pages/collections.html" class="rs-collection-card">
-      <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw9dbb6f94/homepage/tanishq-collections/gold-coins.jpg" alt="Gold Jewellery Collection">
-      <span></span>
-    </a>
-
-  </div>
-</section>
-
-<section class="rs-next-section">
-  <h2>Find Your Signature Sparkle</h2>
-</section>
 <!-- JEWELLERY VIDEO SHOWCASE -->
 
 <!-- JEWELLERY VIDEO STORIES -->

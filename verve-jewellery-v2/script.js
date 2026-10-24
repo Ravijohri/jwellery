@@ -290,6 +290,149 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
   setupMobileMenu();
   setupNewsletter();
+
+  const arrivalsTrack = document.querySelector(".new-arrivals-track");
+  const arrivalsPrev = document.querySelector(".new-arrivals-prev");
+  const arrivalsNext = document.querySelector(".new-arrivals-next");
+  if (arrivalsTrack && arrivalsPrev && arrivalsNext) {
+    const getArrivalStep = () => {
+      const card = arrivalsTrack.querySelector(".new-arrivals-card, .new-arrivals-box");
+      return card ? card.getBoundingClientRect().width + 18 : 308;
+    };
+
+    let arrivalAnimationFrame;
+    const smoothArrivalScroll = (target) => {
+      cancelAnimationFrame(arrivalAnimationFrame);
+      const start = arrivalsTrack.scrollLeft;
+      const distance = target - start;
+      const duration = 720;
+      const startedAt = performance.now();
+      const easeInOut = (value) => value < 0.5
+        ? 4 * value * value * value
+        : 1 - Math.pow(-2 * value + 2, 3) / 2;
+
+      const animate = (now) => {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        arrivalsTrack.scrollLeft = start + distance * easeInOut(progress);
+        if (progress < 1) arrivalAnimationFrame = requestAnimationFrame(animate);
+      };
+
+      arrivalAnimationFrame = requestAnimationFrame(animate);
+    };
+
+    const updateArrivalControls = () => {
+      const maxScroll = arrivalsTrack.scrollWidth - arrivalsTrack.clientWidth;
+      arrivalsPrev.hidden = arrivalsTrack.scrollLeft <= 4;
+      arrivalsNext.hidden = maxScroll <= 4 || arrivalsTrack.scrollLeft >= maxScroll - 4;
+    };
+
+    arrivalsPrev.addEventListener("click", () => {
+      smoothArrivalScroll(Math.max(0, arrivalsTrack.scrollLeft - getArrivalStep()));
+    });
+
+    arrivalsNext.addEventListener("click", () => {
+      smoothArrivalScroll(Math.min(
+        arrivalsTrack.scrollWidth - arrivalsTrack.clientWidth,
+        arrivalsTrack.scrollLeft + getArrivalStep(),
+      ));
+    });
+
+    arrivalsTrack.addEventListener("scroll", updateArrivalControls, { passive: true });
+    window.addEventListener("resize", updateArrivalControls);
+    updateArrivalControls();
+  }
+});
+
+/* OUR COLLECTIONS — OVERLAPPING 3D CAROUSEL */
+document.addEventListener("DOMContentLoaded", () => {
+  const lovedSection = document.querySelector(".most-loved-section");
+  if (lovedSection) {
+    const filterButtons = lovedSection.querySelectorAll(".most-loved-filters button");
+    const lovedTrack = lovedSection.querySelector(".most-loved-grid");
+    const lovedCards = lovedSection.querySelectorAll(".most-loved-card");
+    const lovedPrev = lovedSection.querySelector(".most-loved-prev");
+    const lovedNext = lovedSection.querySelector(".most-loved-next");
+    const updateLovedArrows = () => {
+      const hasOverflow = lovedTrack.scrollWidth > lovedTrack.clientWidth + 2;
+      lovedPrev.classList.toggle("is-visible", hasOverflow && lovedTrack.scrollLeft > 2);
+      lovedNext.classList.toggle("is-visible", hasOverflow && lovedTrack.scrollLeft < lovedTrack.scrollWidth - lovedTrack.clientWidth - 2);
+    };
+    const lovedStep = () => lovedTrack.clientWidth * .82;
+
+    lovedPrev.addEventListener("click", () => lovedTrack.scrollBy({ left: -lovedStep(), behavior: "smooth" }));
+    lovedNext.addEventListener("click", () => lovedTrack.scrollBy({ left: lovedStep(), behavior: "smooth" }));
+    lovedTrack.addEventListener("scroll", updateLovedArrows, { passive: true });
+    window.addEventListener("resize", updateLovedArrows);
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+        lovedCards.forEach((card) => {
+          const category = new URL(card.href, window.location.href).searchParams.get("category");
+          card.hidden = filter !== "all" && category !== filter;
+        });
+          lovedTrack.scrollTo({ left: 0, behavior: "smooth" });
+          requestAnimationFrame(updateLovedArrows);
+      });
+    });
+    updateLovedArrows();
+  }
+
+  const section = document.querySelector(".new-arrivals-collections");
+  const track = section?.querySelector(".new-arrivals-collections-track");
+  const cards = track ? Array.from(track.querySelectorAll("a")) : [];
+  const dots = section?.querySelector(".collections-carousel-dots");
+  const previous = section?.querySelector(".collections-carousel-prev");
+  const next = section?.querySelector(".collections-carousel-next");
+  if (!section || !track || cards.length !== 5 || !dots || !previous || !next) return;
+
+  let active = 0;
+  let timer;
+  let touchStart = 0;
+
+  cards.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.ariaLabel = `Show collection ${index + 1}`;
+    dot.addEventListener("click", () => { active = index; render(); restart(); });
+    dots.appendChild(dot);
+  });
+
+  function render() {
+    cards.forEach((card, index) => {
+      let offset = index - active;
+      if (offset > 2) offset -= cards.length;
+      if (offset < -2) offset += cards.length;
+      card.dataset.position = offset;
+      card.classList.toggle("is-active", offset === 0);
+      card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
+    });
+    dots.querySelectorAll("button").forEach((dot, index) => dot.classList.toggle("is-active", index === active));
+  }
+
+  function move(direction) {
+    active = (active + direction + cards.length) % cards.length;
+    render();
+    restart();
+  }
+
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(() => move(1), 3500);
+  }
+
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  section.addEventListener("mouseenter", () => clearInterval(timer));
+  section.addEventListener("mouseleave", restart);
+  track.addEventListener("touchstart", (event) => { touchStart = event.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend", (event) => {
+    const distance = event.changedTouches[0].clientX - touchStart;
+    if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1);
+  }, { passive: true });
+
+  render();
+  restart();
 });
 
 /* INFINITE JEWELLERY VIDEO LOOP */
@@ -376,9 +519,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!heroImage) return;
 
   const heroImages = [
-    heroImage.src,
-    "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2000&q=85",
-    "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=2000&q=85"
+    "images/Emerald Elegance Bridal Collection.png",
+    "images/Everyday Luxury Bridal Jewelry Banner.png",
+    "images/Red Solitare_ Happily Ever After.png",
+    "images/Royal Blue Diamond Bridal Collection.png",
+    "images/Velvet Luxe Jewelry Collection.png"
   ];
 
   let currentIndex = 0;
@@ -619,6 +764,110 @@ function initStickyHeader() {
   updateHeader();
 }
 
+/* ESSENTIALS — scroll-linked cinematic split */
+function initEssentialsReveal() {
+  const reveal = document.querySelector('[data-essentials-reveal]');
+  if (!reveal) return;
+
+  const panels = [...reveal.querySelectorAll('.essentials-panel')];
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let frame = 0;
+
+  // Essentials now uses a calm static banner followed by the category row.
+  reveal.classList.add('is-static');
+  return;
+
+  function render() {
+    frame = 0;
+    if (reduced.matches || window.innerWidth <= 650) {
+      reveal.classList.add('is-static');
+      return;
+    }
+
+    const bounds = reveal.getBoundingClientRect();
+    const travel = Math.max(1, bounds.height - window.innerHeight);
+    const progress = Math.max(0, Math.min(1, -bounds.top / travel));
+    const split = Math.max(0, Math.min(1, (progress - .08) / .62));
+    const eased = 1 - Math.pow(1 - split, 3);
+    const offsets = [-28, 0, 28];
+
+    panels.forEach((panel, index) => {
+      const x = offsets[index] * (1 - eased);
+      const y = 12 * (1 - eased);
+      const scale = .94 + eased * .06;
+      panel.style.transform = `translate(${x}%, ${y}%) scale(${scale})`;
+      const clip = `${50 * (1 - eased)}%`;
+      panel.style.clipPath = `inset(0 ${clip} 0 ${clip})`;
+      panel.style.webkitClipPath = `inset(0 ${clip} 0 ${clip})`;
+      panel.style.opacity = String(eased);
+    });
+    reveal.classList.toggle('is-revealed', split > .82);
+  }
+
+  function requestRender() {
+    if (!frame) frame = requestAnimationFrame(render);
+  }
+
+  window.addEventListener('scroll', requestRender, { passive: true });
+  window.addEventListener('resize', requestRender);
+  reduced.addEventListener?.('change', requestRender);
+  render();
+}
+
+function initSculptedPromos() {
+  const promos = document.querySelectorAll('.sculpted-promo');
+  if (!promos.length) return;
+  if (!('IntersectionObserver' in window)) {
+    promos.forEach((promo) => promo.classList.add('is-visible'));
+    return;
+  }
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        currentObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.18 });
+  promos.forEach((promo) => observer.observe(promo));
+}
+
+function initNewArrivalsReveal() {
+  const section = document.querySelector('.new-arrivals-section');
+  if (!section) return;
+  if (!('IntersectionObserver' in window)) {
+    section.classList.add('is-visible');
+    return;
+  }
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    if (entries[0].isIntersecting) {
+      section.classList.add('is-visible');
+      currentObserver.disconnect();
+    }
+  }, { threshold: 0.2 });
+  observer.observe(section);
+}
+
+document.querySelectorAll('.curated-wishlist').forEach((button) => {
+  button.addEventListener('click', () => {
+    const saved = button.classList.toggle('is-saved');
+    button.textContent = saved ? '♥' : '♡';
+    button.setAttribute('aria-pressed', String(saved));
+  });
+});
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initNewArrivalsReveal, { once: true });
+} else {
+  initNewArrivalsReveal();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSculptedPromos, { once: true });
+} else {
+  initSculptedPromos();
+}
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initSearchPlaceholder, { once: true });
 } else {
@@ -629,4 +878,10 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initStickyHeader, { once: true });
 } else {
   initStickyHeader();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initEssentialsReveal, { once: true });
+} else {
+  initEssentialsReveal();
 }
