@@ -18,6 +18,11 @@
   --sans: "DM Sans", Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -653,6 +658,36 @@ section {
 
 .header-icon:hover,
 .bag-link:hover { color: var(--wine); }
+
+.header-icon::after,
+.bag-link::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  z-index: 20;
+  padding: 6px 9px;
+  border-radius: 3px;
+  background: var(--wine);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.header-icon:hover::after,
+.header-icon:focus-visible::after,
+.bag-link:hover::after,
+.bag-link:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
 
 .bag-link sup {
   position: absolute;
@@ -1424,6 +1459,34 @@ section {
   margin-top: 25px;
 }
 
+.new-arrivals-view-all {
+  justify-content: flex-end;
+  margin-right: 4%;
+}
+
+.new-arrivals-view-link {
+  color: var(--wine);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: color .25s ease;
+}
+
+.new-arrivals-view-link:hover {
+  color: #9b681f;
+}
+
+.sparkle-intro-link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform .3s ease;
+}
+
+.sparkle-intro-link:hover {
+  transform: translateY(-3px);
+}
+
 /* CURVED CAROUSEL: JAVASCRIPT CONTROLS CARD POSITIONS.
    Do not add a second CSS animation to #productGrid. */
 
@@ -1492,7 +1555,7 @@ section {
   align-items: center;
   gap: 8%;
   padding: 95px 8%;
-  background: var(--cream);
+  background: #fff;
 }
 
 .showroom-copy > p:not(.eyebrow) {
@@ -1939,7 +2002,7 @@ section {
 
 .newsletter {
   padding: 85px 20px;
-  background: var(--secondary-bg);
+  background: #fff;
   text-align: center;
 }
 
@@ -2813,6 +2876,168 @@ section {
   }
 }
 
+/* MEN'S JEWELLERY PAGE */
+.mens-page { background: #fff; color: #111; }
+.rings-page .rings-content { display: none; }
+.rings-page .rings-hero { padding: 78px 20px 70px; text-align: center; background: #f8f3ee; }
+.rings-page .rings-hero h1 { margin: 10px 0 14px; font: 400 clamp(42px, 6vw, 76px)/1.05 var(--serif); color: #111; }
+.rings-page .rings-hero h1 em { color: #111; }
+.rings-page .rings-hero p:last-child { color: #333; font: 14px/1.8 var(--sans); }
+.mens-page h1,
+.mens-page h2,
+.mens-page h3,
+.mens-page p,
+.mens-page label,
+.mens-page .mens-filter-item,
+.mens-page .mens-products-toolbar,
+.mens-page .mens-product-copy,
+.mens-page .mens-product-price,
+.mens-page .mens-collection-card span { color: #111; }
+.mens-page .mens-page-hero > p:last-child,
+.mens-page .mens-product-tag,
+.mens-page .mens-product-delivery,
+.mens-page .mens-collection-heading > p:last-child { color: #333; }
+.mens-filters { color: #111; }
+.mens-filter-heading,
+.mens-filter-item { color: #111; font-size: 16px; font-weight: 600; }
+.mens-filter-heading { padding: 20px 0 16px; }
+.mens-filter-heading strong { color: #000; font-size: 25px; letter-spacing: -.02em; }
+.mens-filter-heading button { color: #c29b52; font-size: 16px; font-weight: 600; }
+.mens-price-options label { color: #111; font-size: 16px; line-height: 1.45; }
+.mens-price-options small { color: #333; font-size: 13px; }
+.mens-price-options input { width: 18px; height: 18px; }
+details.mens-price-filter .mens-filter-panel { max-height: 0; overflow: hidden; padding-top: 0; padding-bottom: 0; opacity: 0; transition: max-height .45s ease, padding .45s ease, opacity .35s ease; }
+details.mens-price-filter[open] .mens-filter-panel.is-expanded { max-height: 420px; padding-top: 2px; padding-bottom: 14px; opacity: 1; }
+.mens-dynamic-filter-panel { max-height: 0; overflow: hidden; padding: 0; border-bottom: 1px solid var(--line); opacity: 0; transition: max-height .45s ease, padding .45s ease, opacity .35s ease; }
+.mens-dynamic-filter-panel.is-expanded { max-height: 180px; padding: 4px 0 14px; opacity: 1; }
+.mens-dynamic-filter-panel label { display: grid; grid-template-columns: 18px 1fr auto; gap: 7px; align-items: center; padding: 7px 0; color: #111; font-size: 13px; }
+.mens-dynamic-filter-panel input { width: 18px; height: 18px; accent-color: var(--wine); }
+.mens-dynamic-filter-panel small { color: #333; font-size: 11px; }
+.mens-page .mens-price-options label,
+.mens-page .mens-dynamic-filter-panel label { color: #111; font-family: var(--sans); font-size: 13px; font-weight: 400; }
+.mens-page .mens-price-options small,
+.mens-page .mens-dynamic-filter-panel small { color: #111; font-family: var(--sans); font-size: 13px; font-weight: 400; }
+.mens-filter-item.is-open span { transform: rotate(180deg); }
+.mens-filter-item span { display: inline-block; transition: transform .35s ease; }
+details.mens-price-filter summary span { transform: rotate(0deg); }
+details.mens-price-filter summary.is-expanded span { transform: rotate(180deg); }
+.mens-page-hero { padding: 78px 20px 70px; text-align: center; background: #f8f3ee; }
+.mens-page:not(.rings-page):not(.category-page) .mens-page-hero {
+  min-height: 390px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/Jewelry.jpg") center / cover no-repeat;
+}
+.mens-page:not(.rings-page):not(.category-page) .mens-page-hero > * { visibility: hidden; }
+.mens-page.category-women .mens-page-hero {
+  min-height: 390px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/Woman elegantly adorned with sparkle, a Beauty & Fashion Photo by MistyDay.jpg") center / cover no-repeat;
+}
+.mens-page.category-women .mens-page-hero > * { visibility: hidden; }
+.mens-page.category-fashion .mens-page-hero {
+  min-height: 390px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/Anniversary Gift Guide.jpg") center / cover no-repeat;
+}
+.mens-page.category-fashion .mens-page-hero > * { visibility: hidden; }
+.mens-page.category-silver .mens-page-hero {
+  min-height: 390px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/High Quality Moissanite,You can Choose Different Style Jewelry%23Affordable Moissanite Jewelry%23.jpg") center / cover no-repeat;
+}
+.mens-page.category-silver .mens-page-hero > * { visibility: hidden; }
+.mens-page.category-minimal .mens-page-hero {
+  min-height: 390px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/Shane Co_ _ Engagement Rings & Fine Jewelry (1).jpg") center / cover no-repeat;
+}
+.mens-page.category-minimal .mens-page-hero > * { visibility: hidden; }
+.mens-page.category-accessories .mens-page-hero {
+  min-height: 390px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/Icy Blue Jewellery Collection.png") center / cover no-repeat;
+}
+.mens-page.category-accessories .mens-page-hero > * { visibility: hidden; }
+.earrings-page { background: #fff; color: #111; }
+.earrings-hero { padding: 82px 20px 64px; text-align: center; background: #f8f3ee; }
+.earrings-hero h1 { margin: 10px 0; font: 400 clamp(42px, 6vw, 76px)/1.05 var(--serif); }
+.earrings-hero h1 em { color: var(--wine); font-weight: 400; }
+.earrings-hero p:last-child { color: #333; font-size: 14px; }
+.earrings-content { max-width: 1150px; margin: auto; padding: 55px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.earrings-content img { width: 100%; height: 390px; object-fit: cover; }
+.earrings-copy { align-self: center; padding: 20px; }
+.earrings-copy h2 { font: 400 38px var(--serif); }
+.earrings-copy p { color: #333; line-height: 1.8; }
+.earrings-copy a { color: var(--wine); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.earring-categories { padding: 58px 5% 72px; background: #f8f3ee; text-align: center; }
+.earring-categories h2 { margin: 0 0 28px; font: 400 clamp(28px, 4vw, 44px) var(--serif); }
+.earring-category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; max-width: 1200px; margin: auto; }
+.earring-category-grid a { min-height: 150px; padding: 24px 14px; display: flex; flex-direction: column; justify-content: end; gap: 8px; color: #111; text-align: left; text-decoration: none; background: #fff; border: 1px solid #e3d7cc; border-radius: 18px; transition: background .3s ease, transform .3s ease; }
+.earring-category-grid a:hover { background: #fffaf5; transform: translateY(-5px); }
+.earring-category-grid strong { font: 400 24px var(--serif); }
+.earring-category-grid span { color: #6b2638; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+@media (max-width: 700px) { .earring-category-grid { grid-template-columns: repeat(2, 1fr); } .earring-category-grid a:last-child { grid-column: span 2; } }
+@media (max-width: 650px) { .earrings-content { grid-template-columns: 1fr; padding: 35px 16px; } .earrings-content img { height: 300px; } }
+.mens-page-hero h1 { margin: 10px 0 14px; font: 400 clamp(42px, 6vw, 76px)/1.05 var(--serif); letter-spacing: -.04em; }
+.mens-page-hero h1 em { color: var(--wine); font-weight: 400; }
+.mens-page-hero > p:last-child { max-width: 540px; margin: 0 auto; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.mens-shop-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 42px; max-width: 1380px; margin: 0 auto; padding: 58px 4%; }
+.mens-filters { align-self: start; border-top: 1px solid var(--line); }
+.mens-filter-heading, .mens-filter-item { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 17px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 11px; letter-spacing: .1em; text-align: left; text-transform: uppercase; }
+.mens-filter-heading strong { font-weight: 600; }
+.mens-filter-heading button { border: 0; background: none; color: var(--wine); cursor: pointer; font-size: 10px; }
+.mens-price-filter { border-bottom: 1px solid var(--line); }
+.mens-price-filter summary { list-style: none; cursor: pointer; }
+.mens-price-filter summary::-webkit-details-marker { display: none; }
+.mens-filter-panel { padding: 2px 0 14px; }
+.mens-price-options label { display: grid; grid-template-columns: 16px 1fr auto; gap: 7px; align-items: center; padding: 7px 0; color: var(--muted); font-size: 11px; }
+.mens-price-options input { accent-color: var(--wine); }
+.mens-price-options small { color: #a4948b; }
+.mens-products-toolbar { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 22px; color: var(--muted); font-size: 11px; }
+.mens-products-toolbar select { padding: 10px 12px; border: 1px solid var(--line); background: #fff; color: var(--ink); font: inherit; }
+.mens-product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px 16px; }
+.mens-product-card { min-width: 0; background: #fff; }
+.mens-product-image { position: relative; aspect-ratio: 1 / 1.12; overflow: hidden; background: #f5f1ed; }
+.mens-product-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .5s ease; }
+.mens-product-card:hover .mens-product-image img { transform: scale(1.045); }
+.mens-rating { position: absolute; left: 10px; bottom: 10px; padding: 5px 7px; background: rgba(255,255,255,.9); color: var(--wine); font-size: 10px; }
+.mens-product-copy { padding: 13px 2px 0; }
+.mens-product-copy h3 { margin: 0 0 7px; font: 400 16px/1.3 var(--serif); }
+.mens-product-tag, .mens-product-offer { color: var(--muted); font-size: 10px; letter-spacing: .06em; }
+.mens-product-price { margin: 9px 0 2px; color: var(--wine); font-size: 13px; font-weight: 600; }
+.mens-product-price del { margin-left: 5px; color: #a99b94; font-size: 11px; font-weight: 400; }
+.mens-product-offer { color: #9b681f; }
+.mens-product-delivery { margin-top: 10px; color: #7e756e; font-size: 10px; }
+.mens-collection { padding: 78px 5%; background: #f8f3ee; text-align: center; }
+.mens-collection-heading h2 { margin: 10px 0; font: 400 clamp(32px, 4vw, 48px) var(--serif); }
+.mens-collection-heading > p:last-child { color: var(--muted); font-size: 13px; }
+.mens-collection-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1200px; margin: 35px auto 0; }
+.mens-collection-card { position: relative; height: 330px; overflow: hidden; color: #fff; text-decoration: none; }
+.mens-collection-card::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(30,12,16,.8)); }
+.mens-collection-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+.mens-collection-card:hover img { transform: scale(1.06); }
+.mens-collection-card span { position: absolute; z-index: 1; left: 20px; bottom: 18px; font-size: 11px; letter-spacing: .14em; }
+@media (max-width: 900px) { .mens-shop-layout { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; } .mens-product-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 650px) { .mens-page-hero { padding: 55px 20px 48px; } .mens-shop-layout { display: block; padding: 36px 16px; } .mens-filters { margin-bottom: 28px; } .mens-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 10px; } .mens-products-toolbar { justify-content: space-between; } .mens-collection-grid { grid-template-columns: 1fr; } .mens-collection-card { height: 260px; } }
+
 /* RED SOLITARE COLLECTIONS */
 
 .rs-collections {
@@ -3003,6 +3228,7 @@ section {
 }
 
 .new-arrivals-title {
+  scroll-margin-top: 24px;
   padding: 18px 20px 28px;
   background: #fff;
   text-align: center;
@@ -3011,6 +3237,7 @@ section {
 }
 
 .new-arrivals-title h2 {
+  scroll-margin-top: 0;
   margin: 0;
   font-family: Georgia, serif;
   font-size: 28px;
@@ -3122,7 +3349,7 @@ section {
   opacity: .48;
   transform: translate(-50%, -50%) translateX(0) scale(1);
   z-index: 1;
-  transition: transform 700ms cubic-bezier(.22,.61,.36,1), opacity 500ms ease, z-index 0s linear 350ms;
+  transition: width 700ms cubic-bezier(.22,.61,.36,1), height 700ms cubic-bezier(.22,.61,.36,1), transform 700ms cubic-bezier(.22,.61,.36,1), opacity 500ms ease, z-index 0s linear 350ms;
 }
 
 .new-arrivals-collections-track a.is-active { width: 584px; height: 326px; transform: translate(-50%, -50%) scale(1); opacity: 1; z-index: 5; box-shadow: none; }
@@ -3256,9 +3483,9 @@ section {
 }
 
 .new-arrivals-feature .new-arrivals-latkan {
-  flex: 0 0 230px;
-  width: 230px;
-  height: 398px;
+  flex: 0 0 276px;
+  width: 276px;
+  height: 478px;
   object-fit: contain;
   transform-origin: 50% 8%;
   animation: newArrivalsLatkanSway 4.8s ease-in-out infinite;
@@ -3386,13 +3613,13 @@ section {
 
 @media (min-width: 601px) and (max-width: 1500px) {
   .new-arrivals-carousel { max-width: 100%; gap: 14px; }
-  .new-arrivals-feature .new-arrivals-latkan { flex-basis: 180px; width: 180px; }
+  .new-arrivals-feature .new-arrivals-latkan { flex-basis: 216px; width: 216px; }
 }
 
 @media (max-width: 600px) {
   .new-arrivals-feature { padding: 0 16px 36px; }
   .new-arrivals-carousel { height: 300px; gap: 8px; }
-  .new-arrivals-feature .new-arrivals-latkan { flex-basis: 100px; width: 100px; height: 260px; }
+  .new-arrivals-feature .new-arrivals-latkan { flex-basis: 120px; width: 120px; height: 312px; }
   .new-arrivals-card,
   .new-arrivals-feature .new-arrivals-box { flex-basis: min(190px, calc(100vw - 150px)); width: min(190px, calc(100vw - 150px)); height: auto; aspect-ratio: 290 / 398; }
   .new-arrivals-prev { left: 104px; }

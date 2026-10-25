@@ -47,13 +47,13 @@
 
     <nav class="nav nav-left" id="mainNav">
       <a href="index.html">Home</a>
-      <a href="index.html#new-arrivals-showcase">New Arrivals</a>
-      <a href="pages/collections.html?category=fashion-jewellery">Fashion Jewellery</a>
-      <a href="pages/collections.html?category=92.5-jewellery">92.5 Jewellery</a>
-      <a href="pages/collections.html?category=mens-jewellery">Men's Jewellery</a>
-      <a href="pages/collections.html?category=womens-jewellery">Women's Jewellery</a>
-      <a href="pages/collections.html?category=minimal-jewellery">Minimal Jewellery</a>
-      <a href="pages/collections.html?category=accessories">Accessories</a>
+      <a href="#new-arrivals-heading">New Arrivals</a>
+      <a href="pages/fashion.html">Fashion Jewellery</a>
+      <a href="pages/925.html">92.5 Jewellery</a>
+      <a href="pages/mens.html">Men's Jewellery</a>
+      <a href="pages/women.html">Women's Jewellery</a>
+      <a href="pages/minimal.html">Minimal Jewellery</a>
+      <a href="pages/accessories.html">Accessories</a>
       <a href="pages/collections.html?category=gift-guide">Gift Guide</a>
     </nav>
 
@@ -72,10 +72,18 @@
       <a href="pages/about.html" class="header-icon" aria-label="Wishlist">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27S4 20 4 11.5A6.5 6.5 0 0 1 16 8a6.5 6.5 0 0 1 12 3.5C28 20 16 27 16 27Z"></path></svg>
       </a>
-      <a href="pages/contact.html" class="header-icon" aria-label="Account">
+      <a href="pages/contact.html" class="header-icon" aria-label="My Profile">
         <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="10" r="5"></circle><circle cx="16" cy="16" r="13"></circle><path d="M8 27c1.6-5 5-7.5 8-7.5s6.4 2.5 8 7.5"></path></svg>
       </a>
-      <a href="pages/collections.html" class="bag-link">
+      <a href="pages/contact.html" class="header-icon" aria-label="Our Stores">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M5 13h22l-2-6H7Z"></path>
+          <path d="M7 13v13h18V13"></path>
+          <path d="M5 13c0 2 1.5 3 3.5 3S12 15 12 13c0 2 1.5 3 3.5 3s3.5-1 3.5-3c0 2 1.5 3 3.5 3s3.5-1 3.5-3"></path>
+          <path d="M12 26v-6h8v6"></path>
+        </svg>
+      </a>
+      <a href="pages/collections.html" class="bag-link" aria-label="My Bag">
         <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 11h18l1.5 16h-21Z"></path><path d="M11 12V8a5 5 0 0 1 10 0v4"></path></svg>
         <sup id="cartCount">0</sup>
       </a>
@@ -160,7 +168,7 @@
     <section class="sparkle-categories" aria-labelledby="sparkle-categories-title">
       <div class="sparkle-category-grid">
         <a class="sparkle-category-card sparkle-category-wide" href="pages/collections.html?category=rings"><img src="images/Ring.jpg" alt="Rings"><span><strong>Rings</strong><small>EXPLORE ›</small></span></a>
-        <a class="sparkle-category-card sparkle-category-wide" href="pages/collections.html?category=earrings"><img src="images/Earring.jpg" alt="Earrings"><span><strong>Earrings</strong><small>EXPLORE ›</small></span></a>
+        <a class="sparkle-category-card sparkle-category-wide" href="pages/earrings.html"><img src="images/Earring.jpg" alt="Earrings"><span><strong>Earrings</strong><small>EXPLORE ›</small></span></a>
         <a class="sparkle-category-card" href="pages/collections.html?category=pendants"><img src="images/Pendent.jpg" alt="Pendants"><span><strong>Pendants</strong><small>EXPLORE ›</small></span></a>
         <a class="sparkle-category-card" href="pages/collections.html?category=necklaces"><img src="images/Necklace.jpg" alt="Necklaces"><span><strong>Necklaces</strong><small>EXPLORE ›</small></span></a>
         <a class="sparkle-category-card" href="pages/collections.html?category=bracelets"><img src="images/Bracelet.jpg" alt="Bracelets"><span><strong>Bracelets</strong><small>EXPLORE ›</small></span></a>
@@ -168,7 +176,7 @@
       </div>
     </section>
 
-    <section class="new-arrivals-title" aria-labelledby="new-arrivals-heading">
+    <section class="new-arrivals-title" id="new-arrivals-showcase" aria-labelledby="new-arrivals-heading">
       <h2 id="new-arrivals-heading">New Arrivals</h2>
       <p>Fresh designs. Timeless elegance</p>
     </section>
@@ -205,6 +213,9 @@
           </a>
         </div>
         <button class="new-arrivals-next" type="button" aria-label="View more new arrivals">→</button>
+      </div>
+      <div class="view-all new-arrivals-view-all">
+        <a class="new-arrivals-view-link" href="pages/collections.html?category=new-arrivals">VIEW ALL ↗</a>
       </div>
     </section>
 
@@ -362,11 +373,11 @@
         <p class="essentials-gap-copy">From Everyday Moments to Extraordinary Nights.</p>
         <img class="essentials-gap-image" src="images/Golden Hands, Red Solitare (1).png" alt="Red Solitare jewellery styling" loading="lazy">
         <div class="essentials-panels" aria-label="Essentials collections">
-          <a class="essentials-panel" href="pages/collections.html?category=minimal-jewellery" aria-label="Explore Daily Wear collection">
+          <a class="essentials-panel" href="pages/daily-wear.html" aria-label="Explore Daily Wear collection">
             <div class="essentials-panel-media"><img src="images/board1.jpg" alt="Daily Wear jewellery" loading="lazy"></div>
             <span class="essentials-panel-copy"><strong>Daily Wear</strong><small>Explore Collection <b aria-hidden="true">↗</b></small></span>
           </a>
-          <a class="essentials-panel" href="pages/collections.html?category=fashion-jewellery" aria-label="Explore Party Wear collection">
+          <a class="essentials-panel" href="pages/party-wear.html" aria-label="Explore Party Wear collection">
             <div class="essentials-panel-media"><img src="images/board2.jpg" alt="Party Wear jewellery" loading="lazy"></div>
             <span class="essentials-panel-copy"><strong>Party Wear</strong><small>Explore Collection <b aria-hidden="true">↗</b></small></span>
           </a>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Your Sparkle | Red Solitare</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .sparkle-page { min-height: 100vh; background: #fff; color: #321b1b; }
+    .sparkle-hero { padding: 96px 7% 58px; text-align: center; background: #fbf8f4; }
+    .sparkle-hero h1 { margin: 0; font: 400 clamp(42px, 6vw, 78px)/1.05 Georgia, serif; }
+    .sparkle-hero h1 em { color: #8a5a32; font-weight: 400; }
+    .sparkle-hero p { margin: 18px auto 0; color: #806b63; font: 18px/1.6 Georgia, serif; }
+    .sparkle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; max-width: 1260px; margin: 0 auto; padding: 58px 5%; }
+    .sparkle-tile { position: relative; min-height: 360px; overflow: hidden; color: #fff; text-decoration: none; background: #4a2830; }
+    .sparkle-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+    .sparkle-tile::after { content: ""; position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgba(25, 10, 14, .82)); }
+    .sparkle-tile span { position: absolute; z-index: 1; left: 24px; right: 24px; bottom: 22px; display: flex; justify-content: space-between; align-items: end; font: 400 28px Georgia, serif; }
+    .sparkle-tile small { font: 10px var(--sans); letter-spacing: .14em; }
+    .sparkle-tile:hover img { transform: scale(1.06); }
+    @media (max-width: 700px) { .sparkle-grid { grid-template-columns: 1fr 1fr; gap: 10px; padding: 34px 16px; } .sparkle-tile { min-height: 240px; } .sparkle-tile span { left: 14px; right: 14px; bottom: 14px; font-size: 20px; } }
+    @media (max-width: 460px) { .sparkle-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="sparkle-page">
+    <header class="header">
+      <a class="logo" href="../index.html">RED SOLITARE<span>F I N E &nbsp; J E W E L L E R Y</span></a>
+      <a class="dark-button" href="../index.html">BACK TO HOME ↗</a>
+    </header>
+    <main>
+      <section class="sparkle-hero">
+        <p class="eyebrow">THE ART OF ADORNMENT</p>
+        <h1>Discover Your <em>Sparkle</em></h1>
+        <p>Timeless beauty, crafted for every occasion.</p>
+      </section>
+      <section class="sparkle-grid" aria-label="Jewellery categories">
+        <a class="sparkle-tile" href="collections.html?category=rings"><img src="../images/Ring.jpg" alt="Rings"><span>Rings<small>EXPLORE ↗</small></span></a>
+        <a class="sparkle-tile" href="collections.html?category=earrings"><img src="../images/Earring.jpg" alt="Earrings"><span>Earrings<small>EXPLORE ↗</small></span></a>
+        <a class="sparkle-tile" href="collections.html?category=pendants"><img src="../images/Pendent.jpg" alt="Pendants"><span>Pendants<small>EXPLORE ↗</small></span></a>
+        <a class="sparkle-tile" href="collections.html?category=necklaces"><img src="../images/Necklace.jpg" alt="Necklaces"><span>Necklaces<small>EXPLORE ↗</small></span></a>
+        <a class="sparkle-tile" href="collections.html?category=bracelets"><img src="../images/Bracelet.jpg" alt="Bracelets"><span>Bracelets<small>EXPLORE ↗</small></span></a>
+        <a class="sparkle-tile" href="collections.html?category=mangalsutra"><img src="../images/Mangalsutra.jpg" alt="Mangalsutra"><span>Mangalsutra<small>EXPLORE ↗</small></span></a>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

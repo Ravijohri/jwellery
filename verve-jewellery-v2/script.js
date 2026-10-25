@@ -285,6 +285,82 @@ function setupNewsletter() {
 
 /* INITIALIZE MAIN PAGE FEATURES */
 document.addEventListener("DOMContentLoaded", () => {
+  const ringsCard = document.querySelector('.sparkle-category-card[href*="category=rings"]');
+  if (ringsCard) ringsCard.href = "pages/rings.html";
+  document.querySelectorAll('a[href*="category=earrings"]').forEach((link) => {
+    link.href = "pages/earrings.html";
+  });
+  if (document.body.classList.contains("earrings-page")) {
+    const categories = document.createElement("section");
+    categories.className = "earring-categories";
+    categories.innerHTML = '<h2>Shop Earrings By Style</h2><div class="earring-category-grid"><a href="collections.html?category=jhumkas"><strong>Jhumkas</strong><span>Traditional sparkle ↗</span></a><a href="collections.html?category=balis"><strong>Balis</strong><span>Everyday elegance ↗</span></a><a href="collections.html?category=chandbalis"><strong>Chandbalis</strong><span>Statement shine ↗</span></a><a href="collections.html?category=studs"><strong>Studs</strong><span>Minimal brilliance ↗</span></a><a href="collections.html?category=danglers"><strong>Danglers</strong><span>Move with light ↗</span></a></div>';
+    document.querySelector(".earrings-content")?.after(categories);
+  }
+  if (document.body.classList.contains("rings-page")) {
+    const mensLink = document.querySelector('.nav-left a[href*="category=mens-jewellery"]');
+    if (mensLink) mensLink.href = "mens.html";
+    const ringNavLinks = {
+      "New Arrivals": "../index.html#new-arrivals-heading",
+      "Fashion Jewellery": "fashion.html",
+      "92.5 Jewellery": "925.html",
+      "Men's Jewellery": "mens.html",
+      "Women's Jewellery": "women.html",
+      "Minimal Jewellery": "minimal.html",
+      "Accessories": "accessories.html"
+    };
+    document.querySelectorAll(".rings-page .nav-left a").forEach((link) => {
+      if (ringNavLinks[link.textContent.trim()]) link.href = ringNavLinks[link.textContent.trim()];
+    });
+    const ringsFilters = document.querySelector('.rings-page .mens-filters');
+    if (ringsFilters) {
+      ringsFilters.innerHTML = `<div class="mens-filter-heading"><strong>FILTERS</strong><button type="button">Clear All</button></div>
+        <details class="mens-price-filter" open><summary class="mens-filter-item">Price <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>Under ₹2,000</span><small>(18)</small></label><label><input type="checkbox"><span>₹2,000 - ₹5,000</span><small>(42)</small></label><label><input type="checkbox"><span>₹5,000 - ₹10,000</span><small>(26)</small></label></div></details>
+        <details class="mens-price-filter" open><summary class="mens-filter-item">Color <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>Silver</span><small>(221)</small></label><label><input type="checkbox"><span>Gold</span><small>(56)</small></label><label><input type="checkbox"><span>Black Rhodium</span><small>(2)</small></label></div></details>
+        <details class="mens-price-filter"><summary class="mens-filter-item">Size <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>Small</span><small>(18)</small></label><label><input type="checkbox"><span>Medium</span><small>(42)</small></label><label><input type="checkbox"><span>Large</span><small>(26)</small></label></div></details>
+        <details class="mens-price-filter"><summary class="mens-filter-item">Material <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>925 Silver</span><small>(54)</small></label><label><input type="checkbox"><span>Gold Plated</span><small>(28)</small></label></div></details>
+        <details class="mens-price-filter"><summary class="mens-filter-item">Occasion <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>Everyday</span><small>(86)</small></label><label><input type="checkbox"><span>Party</span><small>(42)</small></label></div></details>
+        <details class="mens-price-filter"><summary class="mens-filter-item">Polish <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>High Polish</span><small>(74)</small></label><label><input type="checkbox"><span>Matte</span><small>(31)</small></label></div></details>
+        <details class="mens-price-filter"><summary class="mens-filter-item">Stone Type <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>Diamond</span><small>(29)</small></label><label><input type="checkbox"><span>Onyx</span><small>(14)</small></label></div></details>
+        <details class="mens-price-filter"><summary class="mens-filter-item">Design Shape <span>⌄</span></summary><div class="mens-price-options mens-filter-panel"><label><input type="checkbox"><span>Classic</span><small>(52)</small></label><label><input type="checkbox"><span>Geometric</span><small>(34)</small></label></div></details>`;
+    }
+  }
+
+  document.querySelectorAll('.mens-filters > button.mens-filter-item').forEach((button) => {
+    const panel = document.createElement("div");
+    panel.className = "mens-dynamic-filter-panel";
+    panel.innerHTML = '<label><input type="checkbox"><span>Classic</span><small>(42)</small></label><label><input type="checkbox"><span>Popular choices</span><small>(28)</small></label><label><input type="checkbox"><span>New styles</span><small>(16)</small></label>';
+    button.after(panel);
+    button.addEventListener("click", () => {
+      panel.classList.toggle("is-expanded");
+      button.classList.toggle("is-open", panel.classList.contains("is-expanded"));
+    });
+  });
+
+  document.querySelectorAll('.mens-filters details.mens-price-filter').forEach((filter) => {
+    const summary = filter.querySelector('summary');
+    const panel = filter.querySelector('.mens-filter-panel');
+    if (!summary || !panel) return;
+    if (filter.open) {
+      panel.classList.add('is-expanded');
+      summary.classList.add('is-expanded');
+    }
+    summary.addEventListener('click', (event) => {
+      event.preventDefault();
+      const expanding = !filter.open;
+      if (expanding) {
+        filter.open = true;
+        requestAnimationFrame(() => {
+          panel.classList.add('is-expanded');
+          summary.classList.add('is-expanded');
+        });
+      } else {
+        panel.classList.remove('is-expanded');
+        summary.classList.remove('is-expanded');
+        window.setTimeout(() => { filter.open = false; }, 450);
+      }
+    });
+  });
+
   installSliderStyles();
   renderProducts();
   updateCartCount();
@@ -399,6 +475,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function render() {
+    // Let the browser paint the current state before applying the next one.
+    // This keeps the CSS transitions visible when the carousel advances.
+    track.classList.add("is-animating");
     cards.forEach((card, index) => {
       let offset = index - active;
       if (offset > 2) offset -= cards.length;
@@ -408,6 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
       card.setAttribute("aria-hidden", offset === 0 ? "false" : "true");
     });
     dots.querySelectorAll("button").forEach((dot, index) => dot.classList.toggle("is-active", index === active));
+    window.setTimeout(() => track.classList.remove("is-animating"), 720);
   }
 
   function move(direction) {
@@ -764,6 +844,23 @@ function initStickyHeader() {
   updateHeader();
 }
 
+/* SMOOTH HEADER NAVIGATION */
+function initSmoothSectionLinks() {
+  document.querySelectorAll('a[href="#new-arrivals-heading"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = document.getElementById("new-arrivals-heading");
+      if (!target) return;
+
+      event.preventDefault();
+      window.scrollTo({
+        top: Math.max(0, target.getBoundingClientRect().top + window.scrollY - 180),
+        behavior: "smooth",
+      });
+      history.pushState(null, "", "#new-arrivals-heading");
+    });
+  });
+}
+
 /* ESSENTIALS — scroll-linked cinematic split */
 function initEssentialsReveal() {
   const reveal = document.querySelector('[data-essentials-reveal]');
@@ -878,6 +975,12 @@ if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initStickyHeader, { once: true });
 } else {
   initStickyHeader();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSmoothSectionLinks, { once: true });
+} else {
+  initSmoothSectionLinks();
 }
 
 if (document.readyState === "loading") {
